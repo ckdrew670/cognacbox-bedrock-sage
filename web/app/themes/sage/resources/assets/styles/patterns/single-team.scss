@@ -1,0 +1,93 @@
+.team-page {
+	&__about {
+		&__container {
+			display: flex;
+			flex-direction: column;
+			@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+				flex-direction: row;
+			}
+		}
+
+		&__details {
+			display: flex;
+			flex-direction: column;
+			@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+				flex-basis: 40%;
+			}
+		}
+
+		&--right {
+			@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+				flex-basis: 60%;
+				padding-left: 1rem;
+			}
+		}
+
+		&__heading {
+			@include body-font();
+			font-weight: bold;
+			margin-top: 2rem;
+
+			@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+				&:first-of-type {
+					margin-top: 0;
+				}
+			}
+		}
+
+		&__text {
+			p {
+				margin-top: 2rem;
+			}
+
+			p:first-of-type {
+				margin-top: 0;
+			}
+		}
+
+		&__image {
+			margin: 0 auto;
+			margin-bottom: 2rem;
+			@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+				margin-left: 0;
+			}
+		}
+
+		ul {
+			text-decoration: none;
+			color: $dark;
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+
+			@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+				margin-bottom: 0;
+			}
+
+			li {
+				padding-bottom: 1rem;
+				align-items: center;
+				width: 100%;
+
+				img {
+					max-width: 1rem;
+				}
+
+				a {
+					cursor: pointer;
+					width: 100%;
+					display: flex;
+					align-items: center;
+					font-weight: normal;
+					color: $dark;
+
+					img {
+						margin-right: 0.6rem;
+					}
+					&:hover {
+						color: $mid;
+					}
+				}
+			}
+		}
+	}
+}

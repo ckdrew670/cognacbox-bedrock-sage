@@ -1,0 +1,25 @@
+.breadcrumbs {
+
+	list-style: none;
+	display: flex;
+
+	&__nav {
+		@extend .container;
+		margin-top: 6rem;
+	}
+
+	&__item,  &__seperator, &__item-current {
+		& + & {
+			margin-left: 0.5rem;
+		}
+	}
+
+	&__link, &__item,  &__seperator, &__item-current {
+		color: $mid-dark;
+		font-weight: 200;
+	}
+
+	&__link:hover {
+		text-decoration: underline;
+	}
+}

@@ -1,0 +1,204 @@
+.featured-posts {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	&--split {
+		background: linear-gradient(to bottom, $mid 0%, $mid 50%, white 50%, white 100%);
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			background: linear-gradient(to bottom, $mid 0%, $mid 45%, white 45%, white 100%);
+		}
+	}
+
+	&__text-content {
+		width: 100%;
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			text-align: center;
+		}
+	}
+
+	&__title {
+		padding-bottom: $spacer * 2;
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			width: 70%;
+			margin: 0 auto;
+		}
+	}
+
+	&__text {
+		margin-bottom: toRem(40);
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			width: 70%;
+			margin: 0 auto;
+			margin-bottom: toRem(80);
+		}
+	}
+
+	&__feed {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		margin: 0;
+		width: 100%;
+	}
+
+	&__post-list {
+		display: flex;
+		flex-direction: column;
+		list-style: none;
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			flex-direction: row;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		&-item {
+			@include media-breakpoint('lg', 'max-width') {
+				&:nth-of-type(n + 2) {
+					margin-top: 1.5rem;
+				}
+			}
+
+			@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+				margin-top: 2rem;
+				width: calc((100% / 3) - 1.34rem);
+			}
+
+			@media screen and (min-width: map-deep-get($breakpoints, 'xl', 'breakpoint')) {
+				margin-top: 3rem;
+				width: calc((100% / 3) - 2rem);
+			}
+		}
+
+		&-item:not(:nth-of-type(3n)) {
+			@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+				margin-right: 2rem;
+			}
+			@media screen and (min-width: map-deep-get($breakpoints, 'xl', 'breakpoint')) {
+				margin-right: 3rem;
+			}
+		}
+	}
+
+	.cta-button__container {
+		align-self: center;
+		margin-top: 3rem;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			margin-top: toRem(80);
+		}
+	}
+
+	&--four {
+		@extend .featured-posts;
+
+		&__title {
+			margin-bottom: $spacer * 2;
+		}
+
+		&__text-content {
+			text-align: center;
+			margin-bottom: $spacer * 2;
+			@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+				margin-bottom: $spacer * 4;
+				width: 75%;
+			}
+			@media screen and (min-width: map-deep-get($breakpoints, 'xl', 'breakpoint')) {
+				width: 60%;
+			}
+			@media screen and (min-width: map-deep-get($breakpoints, 'xxl', 'breakpoint')) {
+				width: 50%;
+			}
+		}
+		&__feed {
+			@extend .featured-posts__feed;
+		}
+		&__post-list {
+			@extend .featured-posts__post-list;
+
+			@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-between;
+
+				&.center {
+					justify-content: center;
+					.featured-posts--four__post-list-item {
+						margin-left: 1rem;
+						margin-right: 1rem;
+						width: 45%;
+					}
+				}
+			}
+
+			@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+				&.center {
+					.featured-posts--four__post-list-item {
+						width: 29%;
+					}
+				}
+			}
+
+			&-item {
+				.post-card--vertical {
+					box-shadow: none;
+					position: relative;
+
+					&__link {
+						align-self: flex-start;
+						@media screen and (min-width: map-deep-get($breakpoints, 'sm', 'breakpoint')) {
+							position: absolute;
+							top: 1rem;
+							right: 0;
+						}
+						@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+							position: static;
+						}
+
+					}
+					&__title {
+						margin-top: 0;
+						@media screen and (min-width: map-deep-get($breakpoints, 'sm', 'breakpoint')) {
+							width: 70%;
+						}
+						@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+							width: 100%;
+						}
+					}
+					&__info {
+						display: none;
+					}
+					&__content {
+						padding-left: 0;
+						padding-right: 0;
+						min-height: 0;
+					}
+				}
+
+				@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+					width: 48%;
+					margin-bottom: $spacer;
+				}
+				@media screen and (min-width: map-deep-get($breakpoints, 'xl', 'breakpoint')) {
+					width: 23%;
+				}
+			}
+
+			&-item:not(:first-of-type) {
+				margin-top: 1.5rem;
+				@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+					margin-top: 0;
+				}
+			}
+		}
+
+		.cta-button__container {
+			align-self: center;
+			margin-top: $spacer;
+			@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+				margin-top: $spacer * 2;
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+/** Colors */
+$dark: #0f1740;
+$mid-dark: #3b5c7d;
+$mid: #82b2de;
+$white: #fff;
+$grey: #3b3b4c;
+
+$breakpoints: (
+	xs: (
+    breakpoint: 356px
+  ),
+  sm: (
+    breakpoint: 576px
+  ),
+  md: (
+    breakpoint: 768px
+  ),
+  lg: (
+    breakpoint: 992px
+	),
+  xl: (
+    breakpoint: 1200px,
+    max-width: 1020px,
+  ),
+  xxl: (
+    breakpoint: 1440px,
+    max-width: 1200px,
+  ),
+);
+
+/** Box Model */
+$spacer: 1rem;
+
+$font--primary: "open-sans", sans-serif;
+$font--secondary: "raleway", sans-serif;
+
+$body-text-size: 1.125rem;

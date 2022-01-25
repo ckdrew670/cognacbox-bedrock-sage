@@ -1,0 +1,138 @@
+.footer {
+	$spacer: 1rem;
+	padding: 4rem 0;
+	background-color: $dark;
+	color: white;
+
+	&__container {
+		margin-bottom: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		position: relative;
+		@include media-breakpoint(md) {
+			width: 100%;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	&__contents {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+
+		@include media-breakpoint(md) {
+			flex-direction: row;
+			flex-basis: 70%;
+			justify-content: space-between;
+			position: static;
+		}
+		@include media-breakpoint(lg) {
+			flex-basis: 55%;
+		}
+
+		* {
+			@extend .small-text;
+		}
+	}
+
+	&__logo {
+		margin: 0;
+		margin-bottom: 2rem;
+		max-width: 8rem;
+		@include media-breakpoint(md) {
+			margin: 0 $spacer 0 0;
+			flex: 1;
+		}
+	}
+
+	&__navs {
+		display: flex;
+		flex-direction: column;
+		@include media-breakpoint(md) {
+			flex-direction: row;
+			justify-content: space-between;
+			width: 50%;
+		}
+	}
+
+	&__nav, &__socials-nav {
+		margin-bottom: 2rem;
+		width: 100%;
+
+		@include media-breakpoint(md) {
+			margin-bottom: inherit;
+		}
+
+		* {
+			list-style: none;
+			text-decoration: none;
+			color: white;
+
+			li {
+				padding-bottom: 1rem;
+				display: flex;
+				align-items: center;
+				width: 100%;
+
+				img {
+					max-width: 1rem;
+				}
+				a {
+					cursor: pointer;
+					width: 100%;
+					display: flex;
+					align-items: center;
+
+					img {
+						margin-right: 0.6rem;
+					}
+					&:hover {
+						color: $mid;
+					}
+				}
+			}
+		}
+
+	}
+
+	&__socials-nav {
+		@include media-breakpoint(md) {
+			padding-left: 4rem;
+		}
+	}
+	&__text {
+		@extend .xsmall-text;
+		color: white;
+		text-align: center;
+		@include media-breakpoint(md) {
+			flex-basis: 100%;
+			margin-top: $spacer;
+		}
+	}
+
+	&__back-to-top {
+		position: absolute;
+		top: 0;
+		right: 0;
+		@include media-breakpoint(md) {
+			margin-right: 5vw;
+		}
+		@include media-breakpoint(xl) {
+			margin-right: 0;
+		}
+		border-radius: 50%;
+		border: none;
+		outline: none;
+		width: 4rem;
+		height: 4rem;
+		background: $mid;
+		cursor: pointer;
+
+		img {
+			width: 100%;
+			padding: 1rem;
+		}
+	}
+}

@@ -1,0 +1,64 @@
+.icons-grid {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__title {
+		padding-bottom: $spacer * 2;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			padding-bottom: $spacer * 4;
+		}
+	}
+	&__grid {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+
+	&__grid-item {
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		padding: $spacer*2;
+		margin-bottom: $spacer*3;
+		height: 100%;
+		width: 100%;
+		position: relative;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			margin-left: 0.5rem;
+			margin-right: 0.5rem;
+			width: 45%;
+			padding-bottom: $spacer*3;
+		}
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			width: 25%;
+			margin-left: 1.5rem;
+			margin-right: 1.5rem;
+		}
+		@media screen and (min-width: map-deep-get($breakpoints, 'xl', 'breakpoint')) {
+			width: 20%;
+		}
+
+		& > img {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			object-fit: contain;
+		}
+	}
+}

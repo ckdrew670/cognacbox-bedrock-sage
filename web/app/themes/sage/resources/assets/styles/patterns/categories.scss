@@ -1,0 +1,28 @@
+.categories {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	width: 100%;
+	&__list {
+		@extend .container;
+
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		flex-wrap:  wrap;
+	}
+
+	&__list-item {
+		& + & {
+			border-left: 2px solid $mid;
+		}
+
+		a {
+			padding: 0.5rem 2.5rem;
+			font-weight: 400;
+			color: $dark;
+			display: inline-block;
+		}
+	}
+}

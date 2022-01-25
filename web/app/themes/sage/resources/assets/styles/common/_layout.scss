@@ -1,0 +1,287 @@
+/** Breakpoints */
+// NB: update js files if these change;
+
+.container {
+  padding: 0 5vw;
+  box-sizing: border-box;
+
+	@include media-breakpoint(lg) {
+    padding: 0 8vw;
+		margin: 0 auto;
+  }
+	@include media-breakpoint(xl) {
+    padding: 0;
+  }
+
+  @each $screen-size, $container in $breakpoints {
+    @media screen and (min-width: map-get($container, breakpoint)) {
+      max-width: map-get($container, max-width);
+    }
+  }
+}
+
+.panel {
+	padding: 3rem 0;
+	@include media-breakpoint(md) {
+    padding: 4rem 0;
+  }
+}
+
+.background--white {
+	background: white;
+}
+.background--mid {
+	background: $mid;
+}
+.background--dark {
+	background: $dark;
+}
+
+.wp-core-block {
+	@extend .container;
+	&__first-item {
+		margin-top: 2rem;
+		@include media-breakpoint(md) {
+			margin-top: 4rem;
+		}
+	}
+	&__last-item {
+		margin-bottom: 2rem;
+		@include media-breakpoint(md) {
+			margin-bottom: 4rem;
+		}
+	}
+
+	h2 {
+		margin-top: 3rem;
+	}
+
+	h3 {
+		@extend .wysiwyg-heading;
+		margin-top: 3rem;
+	}
+
+	h4 {
+		@extend .wysiwyg-heading;
+		font-size: 1.5rem !important;
+		margin-top: 3rem;
+	}
+
+	p, ul {
+		margin-top: 2rem;
+	}
+
+	ul {
+		list-style: disc;
+	}
+
+	a {
+		&:hover {
+			color: $dark;
+			text-decoration: underline;
+		}
+	}
+
+	ul, ol {
+		margin-left: 4rem;
+		margin-right: 4rem;
+		li {
+			&::marker {
+				color: $mid;
+			}
+		}
+	}
+
+	.wp-block-separator {
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+		color: $mid;
+		border-bottom: none;
+	}
+
+	.wp-block-columns {
+		flex-wrap: wrap;
+		@include media-breakpoint(lg) {
+			flex-wrap: nowrap;
+		}
+		& > .wp-core-block {
+			@include media-breakpoint(lg) {
+				flex-basis: 50% !important;
+			}
+		}
+		.wp-core-block {
+			padding: 0;
+		}
+		.wp-core-block:first-of-type {
+			@include media-breakpoint(lg) {
+				margin-right: 2rem;
+			}
+		}
+	}
+
+	.wp-block-column {
+		.wp-core-block .wp-block-image {
+			margin-top: 2rem;
+			figure {
+				width: 100%;
+				max-width: 100%;
+			}
+			img {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+	}
+
+	.wp-block-image {
+		margin-top: 4.5rem;
+		margin-bottom: 4.5rem;
+		& > * {
+			margin: 0;
+			position: relative;
+			width: 100%;
+			height: auto;
+			clear: both;
+			float: unset;
+			display: block;
+
+			@include media-breakpoint(md) {
+				max-width: 70%;
+				border-radius: 8px;
+			}
+
+			@include media-breakpoint(xl) {
+				max-width: 60%;
+			}
+
+			@include media-breakpoint(xxl) {
+				width: 60%;
+			}
+
+			& > img {
+				height: 100%;
+				width: 100%;
+			}
+
+			figcaption {
+				@extend .small-text;
+				position: absolute;
+				bottom: -3rem;
+			}
+		}
+		.aligncenter, .alignnone {
+			margin: 0 auto;
+		}
+		.alignright {
+			margin-right: 0;
+			@include media-breakpoint(md) {
+				margin-left: 30%;
+			}
+			@include media-breakpoint(xl) {
+				margin-left: 40%;
+			}
+		}
+	}
+}
+
+.wysiwyg {
+	&__content {
+		@extend .wp-core-block;
+		padding-top: 2rem;
+		padding-bottom: 4rem;
+		& > * {
+			margin-top: 2rem;
+		}
+	}
+
+	img {
+		width: 100%;
+		@include media-breakpoint(md) {
+			border-radius: 8px;
+			width: 70%;
+		}
+		@include media-breakpoint(xl) {
+			width: 60%;
+		}
+		@include media-breakpoint(xxl) {
+			width: 70%;
+		}
+	}
+
+	&__image-container {
+		margin: 0;
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+		position: relative;
+		max-width: 100%;
+		height: 20rem;
+		clear: both;
+		float: unset;
+		display: flex;
+		justify-content: center;
+
+		@include media-breakpoint(sm) {
+			height: 25rem;
+		}
+
+		@include media-breakpoint(md) {
+			margin-left: auto;
+			margin-right: auto;
+
+			& img {
+				border-radius: 8px;
+			}
+		}
+
+		@include media-breakpoint(lg) {
+			height: 40vw;
+			margin-top: 7rem !important;
+			margin-bottom: 7rem;
+		}
+
+		@include media-breakpoint(xl) {
+			height: 30vw;
+		}
+
+		@include media-breakpoint(xxl) {
+			height: 28vw;
+		}
+
+		& > img {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+
+			@include media-breakpoint(md) {
+				max-width: 70%;
+			}
+
+			@include media-breakpoint(xl) {
+				max-width: 60%;
+			}
+
+			@include media-breakpoint(xxl) {
+				width: 70%;
+			}
+
+		}
+
+		figcaption {
+			@extend .small-text;
+			position: absolute;
+			bottom: -2rem;
+		}
+
+		&.img--alignleft {
+			justify-content: flex-start;
+		}
+		&.img--aligncenter, &.img--alignnone {
+			justify-content: center;
+		}
+		&.img--alignright {
+			justify-content: flex-end;
+		}
+	}
+
+}

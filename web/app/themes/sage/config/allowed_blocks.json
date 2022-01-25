@@ -1,0 +1,12 @@
+[
+	"core/heading",
+	"core/image",
+	"core/list",
+	"core/paragraph",
+	"core/pullquote",
+	"core/separator",
+	"core/shortcode",
+	"core/spacer",
+	"core/subhead",
+	"core/columns"
+]

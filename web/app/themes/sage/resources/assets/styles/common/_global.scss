@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: $font--primary;
+  line-height: 1.7;
+  color: $dark;
+	font-size: $body-text-size;
+}
+
+p {
+	font-size: $body-text-size;
+	line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font--secondary;
+}
+
+h1 {
+	@extend .h1;
+}
+
+h2 {
+	@extend .h2;
+}
+
+h3 {
+	@extend .h3;
+}
+
+h4 {
+	@extend .h4;
+}
+
+a {
+	@extend .link;
+}
+
+@media (prefers-reduced-motion) {
+  * {
+    transition: all 0s !important;
+    animation: none !important;
+  }
+}
+
+ul {
+	list-style: none;
+}
+
+.hidden {
+	visibility: hidden;
+}

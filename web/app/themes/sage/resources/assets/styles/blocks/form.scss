@@ -1,0 +1,111 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	@extend .panel;
+	&__content, &__form {
+		@extend .container;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			padding: 0 8em;
+			margin: 0;
+		}
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			margin: 0 4em;
+		}
+		@media screen and (min-width: map-deep-get($breakpoints, 'xxl', 'breakpoint')) {
+			margin: 0 2em;
+		}
+	}
+	&__title {
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	input[type="checkbox"] {
+		appearance: none!important;
+		background-color: transparent!important;
+		margin: 0!important;
+		font: inherit!important;
+		color: #FFF!important;
+		width: 1.15em!important;
+		height: 1.15em!important;
+		border: 0.15em solid $dark!important;
+		border-radius: 0.25em!important;
+		transform: translateY(-0.125em)!important;
+		margin-right: 0.5em!important;
+	}
+	input[type="checkbox"]:checked {
+		background-color: #FFF;
+		background-image: url(../images/tick_dark.svg);
+		background-position: center -1px;
+		background-size: 90%;
+		background-repeat: no-repeat;
+	}
+	input[type='radio'] {
+		margin-right: 1em!important;
+	}
+	input[type='radio']:after {
+		width: 1.3rem;
+		height: 1.3rem;
+		border-radius: 0.25em!important;
+		top: -0.35rem;
+		left: -1px;
+		position: relative;
+		background-color: #FFF;
+		content: '';
+		display: inline-block;
+		visibility: visible;
+		border: 0.15em solid $dark!important;
+	}
+
+	input[type='radio']:checked:after {
+		background-color: #FFF;
+		background-image: url(../images/tick_dark.svg);
+		background-position: center -1px;
+		background-size: 90%;
+		background-repeat: no-repeat;
+	}
+	& input[type="text"] {
+		padding: 0.5em 0!important;
+		font: inherit!important;
+		font-size: 15px!important;
+		& + label {
+			margin-top: 1em!important;
+		}
+	}
+	& input[type="email"] {
+		padding: 0.5em 0!important;
+		font: inherit!important;
+		font-size: 15px!important;
+		& + label {
+			margin-top: 1em!important;
+		}
+	}
+	& input[type="tel"] {
+		padding: 0.5em 0!important;
+		font: inherit!important;
+		font-size: 15px!important;
+		& + label {
+			margin-top: 1em!important;
+		}
+	}
+	input[type="submit"] {
+		@extend .cta-button;
+		margin-right: 0;
+		margin-top: 2em!important;
+	}
+	.gfield {
+		margin-top: 1em!important;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			margin-top: 2em!important;
+		}
+	}
+	.gchoice {
+		display: inline;
+		margin-right: 1em!important;
+	}
+	.gform_footer {
+		display: flex;
+		justify-content: center;
+		padding-top: 2em;
+	}
+}

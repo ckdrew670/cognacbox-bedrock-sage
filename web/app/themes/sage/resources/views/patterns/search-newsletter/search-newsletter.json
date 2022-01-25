@@ -1,0 +1,7 @@
+{
+	"title": "",
+	"description": "",
+	"instances": [],
+	"testFile": "cypress/integration/search-newsletter.spec.js",
+	"sassFile": "resources/assets/styles/patterns/search-newsletter.scss"
+}

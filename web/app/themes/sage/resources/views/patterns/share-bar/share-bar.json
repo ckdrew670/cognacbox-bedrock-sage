@@ -1,0 +1,9 @@
+{
+	"title": "Share Bar",
+	"description": "A collection of social media links",
+	"instances": [{
+		"text": "share"
+	}],
+	"testFile": "cypress/integration/share-bar.spec.js",
+	"sassFile": "resources/assets/styles/patterns/share-bar.scss"
+}

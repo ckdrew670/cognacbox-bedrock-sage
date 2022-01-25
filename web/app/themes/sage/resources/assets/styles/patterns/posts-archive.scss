@@ -1,0 +1,41 @@
+.posts-archive {
+	margin: 2em 0;
+	@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+		margin: 4em 0;
+	}
+	&__container {
+		display: block;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			display: flex;
+		}
+	}
+	&__filters {
+		width: 100%;
+		margin-bottom: 2em;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			width: 30%;
+			margin: 0 2em 0 0;
+		}
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			margin: 0 4em 0 0;
+		}
+		@media screen and (min-width: map-deep-get($breakpoints, 'xxl', 'breakpoint')) {
+			margin: 0 4em;
+		}
+	}
+	&__list {
+		width: 100%;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			width: 70%;
+		}
+		display: flex;
+		flex-direction: column;
+		& article {
+			margin-bottom: 2em;
+			@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+				margin-bottom: 4em;
+			}
+			box-shadow: 1px 5px 18px 5px rgba(0,0,0,0.14);
+		}
+	}
+}

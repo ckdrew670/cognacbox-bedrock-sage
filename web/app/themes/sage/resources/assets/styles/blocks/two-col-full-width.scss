@@ -1,0 +1,252 @@
+.two-column, .two-col-full-width {
+	&__container {
+		display: flex;
+		flex-direction: column-reverse;
+		position: relative;
+
+		ul, ol {
+			margin-left: 4rem;
+			margin-right: 4rem;
+			li {
+				&::marker {
+					color: $mid;
+				}
+			}
+		}
+
+		&--left {
+			@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+				flex-direction: row-reverse;
+			}
+			.two-col-full-width__text-content {
+				@media screen and (min-width: map-deep-get($breakpoints, 'xl', 'breakpoint')) {
+					padding-right: calc((100vw - 1020px) / 2);
+					padding-left: 4rem;
+				}
+				@media screen and (min-width: map-deep-get($breakpoints, 'xxl', 'breakpoint')) {
+					padding-right: calc((100vw - 1200px) / 2);
+				}
+			}
+		}
+		&--right {
+			@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+				flex-direction: row;
+			}
+			.two-col-full-width__text-content {
+				@media screen and (min-width: map-deep-get($breakpoints, 'xl', 'breakpoint')) {
+					padding-left: calc((100vw - 1020px) / 2);
+					padding-right: 6rem;
+				}
+				@media screen and (min-width: map-deep-get($breakpoints, 'xxl', 'breakpoint')) {
+					padding-left: calc((100vw - 1200px) / 2);
+				}
+			}
+		}
+
+		&--posts {
+			align-items: center;
+			flex-direction: column;
+			&.two-col-full-width__container--left {
+				@media screen and (min-width: map-deep-get($breakpoints, 'xl', 'breakpoint')) {
+					flex-direction: row-reverse;
+				}
+			}
+			&.two-col-full-width__container--right {
+				@media screen and (min-width: map-deep-get($breakpoints, 'xl', 'breakpoint')) {
+					flex-direction: row;
+				}
+			}
+			.two-col-full-width__text-content {
+				padding-top: 4rem;
+				padding-bottom: 4rem;
+				text-align: center;
+				align-items: center;
+
+				h2 {
+					width: 70%;
+					@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+						width: inherit;
+					}
+				}
+
+				@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+					text-align: left;
+					align-items: flex-start;
+					padding-top: 7.5rem;
+				}
+			}
+		}
+	}
+
+	&__image {
+		@extend .image;
+		flex-basis: 50%;
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			position: relative;
+
+			& > img {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	&__text-content {
+		display: flex;
+		flex-direction: column;
+		flex-basis: 50%;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			padding-top: 7.5rem;
+			padding-bottom: 7.5rem;
+		}
+		@media screen and (min-width: map-deep-get($breakpoints, 'xl', 'breakpoint')) {
+			padding-left: calc((100vw - 1020px) / 2);
+			padding-right: 4rem;
+		}
+		@media screen and (min-width: map-deep-get($breakpoints, 'xxl', 'breakpoint')) {
+			padding-left: calc((100vw - 1200px) / 2);
+		}
+
+
+		p {
+			margin: 1.5rem 0;
+		}
+	}
+
+	&__text--white {
+		color: white;
+		width: 100%;
+	}
+	&__text--mid {
+		color: $mid;
+		width: 100%;
+	}
+	&__text--dark {
+		color: $dark;
+		width: 100%;
+	}
+
+	&__post-feed {
+		background: white;
+		padding-top: 2rem;
+		padding-bottom: 4rem;
+		@extend .container;
+		width: 100%;
+		margin: 0;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			padding: 4rem;
+			flex-basis: 50%;
+		}
+
+	}
+
+	&__posts {
+		background: white;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin: 0 !important;
+		list-style: none;
+
+		& > li {
+			margin-bottom: 2rem;
+		}
+
+		.post-card--horizontal__wrapper:last-of-type > article {
+			margin-bottom: 0;
+		}
+	}
+
+	&__title {
+		padding-bottom: $spacer/ 2;
+	}
+}
+
+.two-column {
+	padding-top: 0;
+	padding-bottom: 0;
+	@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+	&__container {
+		&--right {
+			@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+				flex-direction: row;
+			}
+			.two-column__image {
+				& > img {
+					@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+						border-bottom-left-radius: 8px;
+						border-top-left-radius: 8px;
+					}
+				}
+			}
+		}
+
+		&--left {
+			@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+				flex-direction: row-reverse;
+			}
+			.two-column__image {
+				& > img {
+					@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+						border-bottom-right-radius: 8px;
+						border-top-right-radius: 8px;
+					}
+				}
+			}
+
+			.two-column__text-content {
+				@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+					padding-left: 4rem;
+					padding-right: 4rem;
+				}
+				@media screen and (min-width: map-deep-get($breakpoints, 'xl', 'breakpoint')) {
+					padding-right: calc((100vw - 1020px) / 2);
+				}
+				@media screen and (min-width: map-deep-get($breakpoints, 'xxl', 'breakpoint')) {
+					padding-right: calc((100vw - 1200px) / 2);
+				}
+
+			}
+		}
+	}
+
+	&__image {
+		position: relative;
+		height: 20rem;
+		flex-basis: unset;
+		@media screen and (min-width: map-deep-get($breakpoints, 'sm', 'breakpoint')) {
+			height: 30rem;
+		}
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			min-height: 30rem;
+			height: auto;
+			flex-basis: 50%;
+		}
+
+		& > img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			position: absolute;
+		}
+	}
+
+	&__title {
+		@extend .wysiwyg-heading;
+		margin-top: 2rem;
+	}
+
+	&__text-content {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		align-self: center;
+	}
+}

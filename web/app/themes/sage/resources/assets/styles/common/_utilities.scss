@@ -1,0 +1,11 @@
+.lg-up {
+  @include media-breakpoint(lg, max-width) {
+    display: none !important;
+  }
+}
+
+.lg-down {
+  @include media-breakpoint(lg) {
+    display: none !important;
+  }
+}

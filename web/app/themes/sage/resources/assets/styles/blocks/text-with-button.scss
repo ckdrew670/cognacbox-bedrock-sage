@@ -1,0 +1,82 @@
+.text-with-button {
+	width: 100%;
+	padding: 4rem 0;
+
+	&__contents {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		position: relative;
+		padding: 2rem;
+		width: 100%;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			padding: 4rem;
+		}
+
+		&-border--top {
+			height: 1px;
+			width: toRem(120);
+			position: absolute;
+			background-color: $mid-dark;
+			top: 0;
+			left: calc(100vw - (toRem(120) / 2));
+			@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+				display: none;
+			}
+		}
+
+		&-border--bottom {
+			height: 1px;
+			width: toRem(120);
+			position: absolute;
+			background-color: $mid-dark;
+			bottom: 0;
+			left: calc(100vw - (toRem(120) / 2));
+			@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+				display: none;
+			}
+		}
+	}
+
+	&__left {
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			text-align: left;
+			align-items: flex-start;
+			justify-content: center;
+		}
+
+		.text-with-button__text {
+			max-width: 70%;
+		}
+	}
+
+	&__right {
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			text-align: right;
+			align-items: flex-end;
+			justify-content: center;
+		}
+
+		.text-with-button__text {
+			max-width: 70%;
+		}
+	}
+
+	&__title {
+		padding-bottom: $spacer * 2;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			max-width: 70%;
+		}
+	}
+
+	&__text {
+		padding-bottom: 2rem;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			max-width: 70%;
+			padding-bottom: 4rem;
+		}
+	}
+}

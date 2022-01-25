@@ -1,0 +1,7 @@
+{
+	"title": "",
+	"description": "",
+	"instances": [],
+	"testFile": "cypress/integration/breadcrumbs.spec.js",
+	"sassFile": "resources/assets/styles/patterns/breadcrumbs.scss"
+}

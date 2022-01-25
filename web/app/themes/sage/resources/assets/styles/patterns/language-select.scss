@@ -1,0 +1,34 @@
+.language {
+	display: none;
+  &__select-label {
+    cursor: pointer;
+    font-weight: 200;
+    font-size: toRem(18);
+    color: $dark;
+  }
+
+  &__select {
+    cursor: pointer;
+    font-weight: 200;
+    font-size: toRem(18);
+    border: none;
+    font-family: $font--primary;
+    appearance: none;
+    padding-right: 1.5rem;
+    background: right no-repeat url(/app/themes/sage/resources/assets/images/chevron-down.svg);
+  }
+
+  &__toggle {
+    width: 1.5rem;
+    height: 1rem;
+    position: relative;
+    display: inline-block;
+    transform: rotate(90deg);
+  }
+
+  &__subtoggle__bars {
+    @extend %subtoggle__bars;
+
+    background-color: $dark;
+  }
+}

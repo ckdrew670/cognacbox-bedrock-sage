@@ -1,0 +1,131 @@
+/*************************
+ Typography variables
+**************************/
+
+
+$body-text-size: 1.125rem;
+$body-text-size--secondary: 1rem;
+$body-text-size--tertiary: 1.5rem;
+$body-text-color: $dark;
+
+$line-height: 1.7;
+$line-height-heading: 1.5;
+
+// Heading Sizes
+
+$h1-size: 4rem;
+$h1-size-tablet: 3rem;
+$h1-size-mob: 2rem;
+$h2-size: 3rem;
+$h2-size-tablet: 2.5rem;
+$h2-size-mob: 2rem;
+$h3-size: 2rem;
+$h3-size-tablet: 1.8rem;
+$h3-size-mob: 1.6rem;
+$h4-size: 1.5rem;
+$h4-size-tablet: 1.25rem;
+$h4-size-mob: 1rem;
+
+/*************************
+ Body Text
+**************************/
+
+@mixin body-font($size: $body-text-size, $family: $font--primary, $weight: 400) {
+	line-height: $line-height;
+	font-family: $family;
+	font-size: $size;
+	font-weight: $weight;
+	color: $body-text-color;
+}
+
+/*************************
+ Headings and smaller text
+**************************/
+
+.h1 {
+	@include body-font($h1-size-mob, $font--secondary, 800);
+	line-height: 1.2;
+	@media screen and (min-width: map-deep-get($breakpoints, 'sm', 'breakpoint')) {
+		@include body-font($h1-size-tablet, $font--secondary, 800);
+		line-height: 1.2;
+	}
+	@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+		@include body-font($h1-size, $font--secondary, 800);
+		line-height: 1.2;
+	}
+}
+.h2 {
+	@include body-font($h2-size-mob, $font--secondary, 800);
+	line-height: 1.4;
+	@media screen and (min-width: map-deep-get($breakpoints, 'sm', 'breakpoint')) {
+		@include body-font($h2-size-tablet, $font--secondary, 800);
+		line-height: 1.4;
+	}
+	@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+		@include body-font($h2-size, $font--secondary, 800);
+		line-height: 1.4;
+	}
+}
+.h3 {
+	@include body-font($h3-size-mob, $font--secondary);
+	line-height: $line-height-heading;
+	@media screen and (min-width: map-deep-get($breakpoints, 'sm', 'breakpoint')) {
+		@include body-font($h3-size-tablet, $font--secondary, 800);
+		line-height: $line-height-heading;
+	}
+	@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+		@include body-font($h3-size, $font--secondary);
+		line-height: $line-height-heading;
+	}
+}
+.h4, .h5, .h6 {
+	@include body-font($h4-size-mob, $font--primary);
+	line-height: $line-height-heading;
+	@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+		@include body-font($h4-size, $font--primary);
+		line-height: $line-height-heading;
+	}
+}
+
+.small-text {
+	@include body-font(0.9rem, $font--primary);
+}
+
+.xsmall-text {
+	@include body-font(0.7rem, $font--primary);
+}
+
+.wysiwyg-heading {
+	@extend .h3;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	line-height: 1.5;
+}
+
+.link {
+	@include body-font();
+	font-weight: 700;
+	color: $mid-dark;
+	text-decoration: none;
+}
+
+.text--white {
+	color: white;
+	* {
+		color: white !important;
+	}
+}
+.text--mid {
+	color: $mid;
+}
+.text--dark {
+	color: $dark;
+}
+
+.wysiwyg-heading {
+	@extend .h3;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}

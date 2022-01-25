@@ -1,0 +1,33 @@
+{
+	"title": "Header",
+	"description": "The main header for the site. Instances left blank to avoid duplicate rendering on pattern library page",
+	"linked_files": [],
+	"instances": [],
+	"data": {
+		"items": [
+			{
+				"url": "/",
+				"title": "Home"
+			},
+			{
+				"url": "/about",
+				"title": "About",
+				"children": [
+					{
+						"url": "/about/team",
+						"title": "Team"
+					},
+					{
+						"url": "/about/collaborators",
+						"title": "Collaborators"
+					}
+				]
+			},
+			{
+				"url": "/pattern-library",
+				"title": "Pattern Library",
+				"children": []
+			}
+		]
+	}
+}

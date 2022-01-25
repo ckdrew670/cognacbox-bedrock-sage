@@ -1,0 +1,65 @@
+.share-bar {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+	&__text {
+		font-family: $font--secondary;
+		letter-spacing: 0.3rem;
+		font-size: toRem(32);
+		line-height: toRem(32);
+		text-transform: uppercase;
+		margin-bottom: 1.5rem;
+
+		@include media-breakpoint(sm) {
+			margin-bottom: 0;
+		}
+	}
+	&__link, &__img {
+		display: block;
+		height: toRem(24);
+		max-width: toRem(24);
+	}
+
+	&__link-item  {
+
+		& + & {
+			margin-left: 3rem
+		}
+		@include media-breakpoint(sm) {
+			margin-left: 3rem
+		}
+	}
+
+
+	&__content {
+		@extend .container;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+
+		@include media-breakpoint(sm) {
+			flex-direction: row;
+			justify-content: center;
+		}
+
+	}
+
+	&__link-wrapper {
+		width: 100%;
+		list-style: none;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+
+		@include media-breakpoint(sm) {
+			width: auto;
+		}
+	}
+}
+
+body > .share-bar {
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+}

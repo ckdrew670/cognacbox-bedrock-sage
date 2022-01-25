@@ -1,0 +1,134 @@
+.pattern-library {
+  .main {
+    padding-bottom: 2rem;
+  }
+
+  &__anchor {
+    @extend %innerFocus;
+
+    text-decoration: none;
+    color: black;
+    padding: 0.5rem;
+    margin-left: -0.5rem;
+  }
+
+  &__section > article,
+  .page-header h1 {
+    padding: 1rem;
+  }
+
+  &__instance {
+    padding: 0.5rem;
+    box-sizing: border-box;
+    background: aliceblue;
+    width: 100%;
+
+    @include media-breakpoint(sm, max-width) {
+      padding: 0;
+    }
+  }
+
+  &__hr {
+    justify-self: stretch;
+    margin: 4rem 0;
+
+    &:last-of-type {
+      display: none;
+    }
+  }
+
+  &__code {
+    font-family: monospace;
+    background: white;
+    border-radius: 4px;
+    word-break: break-word;
+    tab-size: 2;
+
+    &--inline {
+      @extend .pattern-library__code;
+
+      border-radius: 4px;
+      padding: 6px 8px;
+      font-size: 1rem;
+    }
+  }
+
+  &__usage {
+    @extend .pattern-library__code;
+  }
+
+  &__pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-width: 100%;
+    background: white;
+    padding: 1rem;
+    margin: 0;
+  }
+
+  &__p {
+    margin: 1rem 0;
+  }
+
+  &__details {
+    margin: 1rem;
+    max-width: 100%;
+
+  }
+
+  &__summary {
+    @extend %innerFocus;
+
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+
+  &__example {
+    position: relative;
+    background: white;
+    margin: 1rem;
+    padding: 1rem;
+
+    .form__input-group {
+      max-width: 75%;
+      min-width: 15rem;
+    }
+
+    @include media-breakpoint(sm, max-width) {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__nav {
+    min-width: 18rem;
+
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: black;
+      padding: 0.5rem;
+      text-decoration: none;
+
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    details {
+      margin: 0;
+    }
+
+    summary {
+      padding: 0.5rem;
+    }
+  }
+}

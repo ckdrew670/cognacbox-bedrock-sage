@@ -1,0 +1,134 @@
+.author-details {
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	&__text-content {
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			flex-basis: 70%;
+			padding-left: 4rem;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'sm', 'breakpoint')) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			margin-top: 2rem;
+		}
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			margin-top: 3rem;
+		}
+	}
+
+	&__details {
+		@media screen and (min-width: map-deep-get($breakpoints, 'sm', 'breakpoint')) {
+			flex-basis: 55%;
+		}
+	}
+
+	&__right {
+		@media screen and (min-width: map-deep-get($breakpoints, 'sm', 'breakpoint')) {
+			flex-basis: 45%;
+			justify-self: flex-end;
+		}
+	}
+
+	&__image {
+		margin: 0 auto;
+		margin-bottom: 2rem;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			margin-left: 0;
+		}
+	}
+
+	&__name {
+		@extend .wysiwyg-heading;
+		font-weight: 800;
+		text-align: left;
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			width: 70%;
+		}
+		@media screen and (min-width: map-deep-get($breakpoints, 'xl', 'breakpoint')) {
+			width: 50%;
+		}
+	}
+
+	&__heading {
+		@include body-font();
+		font-weight: bold;
+		margin-top: 2rem;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			&:first-of-type {
+				margin-top: 0;
+			}
+		}
+	}
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-top: 2rem;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+				margin-top: 0;
+		}
+
+		ul {
+			list-style: none;
+			text-decoration: none;
+			color: $dark;
+			margin-bottom: 2rem;
+
+			li {
+				padding-bottom: 1rem;
+				display: flex;
+				align-items: center;
+				width: 100%;
+
+				img {
+					max-width: 1rem;
+				}
+
+				a {
+					cursor: pointer;
+					width: 100%;
+					display: flex;
+					align-items: center;
+					font-weight: normal;
+					color: $dark;
+
+					img {
+						margin-right: 0.6rem;
+					}
+					&:hover {
+						color: $mid;
+					}
+				}
+			}
+		}
+
+		.cta-button__container {
+			align-self: center;
+
+			@media screen and (min-width: map-deep-get($breakpoints, 'sm', 'breakpoint')) {
+				align-self: flex-start;
+			}
+		}
+	}
+}

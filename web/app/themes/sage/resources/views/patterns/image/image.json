@@ -1,0 +1,36 @@
+{
+	"title": "Image",
+	"description": "Responsive image pattern which uses the `&lt;picture&gt;` element and can support lazy loading",
+	"instances": [
+		{
+			"image": "https://placekitten.com/600/601",
+			"alt": "a cute cat",
+			"lazy_load": false,
+			"sources": [
+				{
+					"srcset": "https://placekitten.com/600/602",
+					"mq": "(min-width: 768px)"
+				}
+			],
+			"attributes": []
+		},
+		{
+			"image": "https://placekitten.com/600/603",
+			"alt": "a cute cat",
+			"lazy_load": false,
+			"sources": [
+				{
+					"srcset": "https://placekitten.com/600/605",
+					"mq": "(min-width: 992px)"
+				},
+				{
+					"srcset": "https://placekitten.com/600/604",
+					"mq": "(min-width: 768px)"
+				}
+			],
+			"attributes": []
+		}
+	],
+	"data": {
+	}
+}

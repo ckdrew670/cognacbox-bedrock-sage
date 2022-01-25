@@ -1,0 +1,16 @@
+.fourohfour + .share-bar {
+	display: none;
+}
+
+.fourohfour {
+	.hero {
+		&__content {
+			.hero__copy {
+				display: none;
+			}
+			.cta-button__container {
+				align-items: flex-start;
+			}
+		}
+	}
+}

@@ -1,0 +1,163 @@
+.hero {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	display: flex;
+	align-items: flex-end;
+	@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+		min-height: 60vh;
+		align-items: center;
+
+		&__team {
+			min-height: 0;
+		}
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		picture {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+
+			& > img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	&__bgimage--desktop {
+		display: none;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			display: block;
+		}
+	}
+
+	&__bgimage--mob {
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			display: none;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		z-index: 1;
+	}
+
+	&__title {
+		@extend .h1;
+		width: 90%;
+		@media screen and (min-width: map-deep-get($breakpoints, 'xl', 'breakpoint')) {
+			width: 80%;
+		}
+	}
+
+	&__subtitle {
+		@extend .h4;
+		font-size: 1.5rem;
+		line-height: 1.5;
+		width: 90%;
+		padding-top: 1.5rem;
+		font-weight: bold;
+		@media screen and (min-width: map-deep-get($breakpoints, 'xl', 'breakpoint')) {
+			width: 70%;
+		}
+	}
+
+	&__publishdate {
+		margin-top: 2rem;
+	}
+
+	&__author-list {
+		margin-top: 2rem;
+	}
+
+	&__copy {
+		font-size: $body-text-size !important;
+		* {
+			font-size: $body-text-size !important;
+		}
+		width: 90%;
+		margin-top: 2rem;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			width: 80%;
+		}
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			width: 70%;
+		}
+
+		h2 {
+			margin-top: 3rem;
+		}
+
+		h3 {
+			@extend .wysiwyg-heading;
+			margin-top: 3rem;
+		}
+
+		h4 {
+			@extend .wysiwyg-heading;
+			font-size: 1.5rem !important;
+			margin-top: 3rem;
+		}
+
+		p, ul {
+			margin-top: 2rem;
+			line-height: 1.5;
+		}
+	}
+
+	.cta-button {
+		margin-top: 2.5rem;
+	}
+
+	&__team {
+		height: 100%;
+		min-height: 0;
+		.hero__content {
+			padding-top: 2rem;
+			width: 100%;
+			align-self: flex-end;
+			@media screen and (min-width: map-deep-get($breakpoints, 'sm', 'breakpoint')) {
+				padding-top: 4rem;
+			}
+			@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+				padding-top: 5rem;
+			}
+		}
+
+		.hero__title {
+			font-size: $h1-size-mob;
+			width: 100%;
+			@media screen and (min-width: map-deep-get($breakpoints, 'sm', 'breakpoint')) {
+				font-size: $h1-size-tablet;
+			}
+			@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+				font-size: 3rem;
+			}
+		}
+
+		.hero__subtitle {
+			text-transform: uppercase;
+			font-size: $h3-size-mob;
+			font-weight: 300;
+			line-height: 1.5;
+			width: 100%;
+		}
+		.hero__copy {
+			display: none;
+		}
+	}
+}

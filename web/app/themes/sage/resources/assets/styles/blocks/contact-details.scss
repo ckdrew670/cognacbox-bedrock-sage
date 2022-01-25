@@ -1,0 +1,29 @@
+.contact-details {
+	.two-col-full-width__container {
+		flex-direction: column;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			flex-direction: row;
+		}
+	}
+
+	.two-col-full-width__container .two-col-full-width__text-content {
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			align-self: center;
+		}
+	}
+
+	&__list-item:not(:last-of-type) {
+		margin-bottom: 1.5rem;
+	}
+	&__title {
+		@include body-font();
+		color: white;
+		font-weight: bold;
+	}
+
+	&__detail {
+		margin-top: 0.5rem !important;
+		margin-bottom: 0 !important;
+	}
+}

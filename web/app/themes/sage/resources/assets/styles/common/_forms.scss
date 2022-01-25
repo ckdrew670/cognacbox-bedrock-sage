@@ -1,0 +1,146 @@
+.gfield {
+	input[type="checkbox"] {
+		appearance: none;
+		background-color: transparent;
+		margin: 0;
+		font: inherit;
+		color: #FFF;
+		width: 1.15em;
+		height: 1.15em;
+		border: 0.15em solid #FFF;
+		border-radius: 0.25em;
+		transform: translateY(0.125em);
+		margin-right: 0.5em;
+	}
+
+	input[type="checkbox"]:checked {
+		background-color: #FFF;
+		background-image: url(../images/tick_dark.svg);
+		background-position: center -1px;
+		background-size: 90%;
+		background-repeat: no-repeat;
+	}
+
+	input[type="text"], input[type="email"], input[type="tel"], textarea {
+		border: none;
+		border-bottom: 1px solid $mid;
+		color: $dark;
+		&::placeholder {
+			color: $mid;
+		}
+		&:focus, &:focus-visible {
+			outline: none;
+			border: none;
+			border-bottom: 2px solid $dark;
+		}
+	}
+
+	textarea {
+		padding-left: 0!important;
+		font: inherit!important;
+		font-size: 15px!important;
+		width: 100%;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			& + label {
+				margin-top: 1em!important;
+			}
+		}
+	}
+
+	.half-width-textarea {
+		font-size: 15px;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			position: absolute;
+			right: -1rem;
+			top: 0.6rem;
+			width: 45%;
+		}
+
+		textarea {
+			padding-left: 0!important;
+			font: inherit!important;
+			font-size: 15px!important;
+			height: 50%!important;
+			@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+				padding-bottom: 3.25rem!important;
+				height: 100% !important;
+				& + label {
+					margin-top: 1em!important;
+				}
+			}
+		}
+	}
+
+	.half-width-field {
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			grid-column: 1/7!important;
+		}
+	}
+}
+
+.gform_body {
+	position: relative;
+}
+
+.site-search__form input[type="text"] {
+	width: 100%;
+	border-radius: 20px;
+	padding: 1em 2em;
+	border: 1px solid $grey;
+	color: $grey;
+	&:focus-visible {
+		outline: 1px solid $dark;
+	}
+}
+
+.post-password-form {
+	@extend .container;
+
+	p:first-of-type {
+		@extend .panel;
+		padding: 2rem 0;
+		@extend .h3;
+	}
+
+	p:last-of-type {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-bottom: 6rem;
+	}
+
+	p label {
+		font-weight: 700;
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'sm', 'breakpoint')) {
+			max-width: 50%;
+		}
+
+		input {
+			border: none;
+			border-bottom: 1px solid $mid;
+			color: $dark;
+			height: 2.625rem;
+			font-size: $body-text-size;
+
+			&:focus, &:focus-visible {
+				outline: none;
+				border: none;
+				border-bottom: 2px solid $dark;
+			}
+		}
+	}
+
+	& input[type="submit"] {
+		@extend .cta-button;
+		margin-top: 3rem;
+	}
+
+	+ .share-bar {
+		display: none;
+	}
+}

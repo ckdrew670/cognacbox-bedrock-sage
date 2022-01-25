@@ -1,0 +1,76 @@
+.quotation {
+	&__contents {
+		display: flex;
+		flex-direction: column;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			flex-direction: row;
+		}
+	}
+
+	&__image {
+		margin: 0 auto;
+		margin-bottom: 2rem;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			margin-left: 0;
+		}
+	}
+
+	&__text-content {
+		display: flex;
+		flex-direction: column-reverse;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			flex-basis: 70%;
+			flex-direction: column;
+		}
+	}
+
+	&__author-details {
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		padding-bottom: 2rem;
+		text-align: center;
+
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			text-align: left;
+			margin-left: 3rem;
+			margin-top: 3rem;
+		}
+	}
+
+	&__author {
+		@extend .h3;
+		padding-bottom: 0.8rem;
+		font-weight: bold;
+		line-height: 1.5;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			font-size: 1.5rem;
+		}
+	}
+
+	&__position {
+		@extend .h3;
+		font-weight: 300;
+		line-height: 1.5;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			font-size: 1.5rem;
+		}
+	}
+
+	&__quote {
+		display: flex;
+		flex-direction: column;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			flex-direction: row;
+			align-items: flex-start;
+		}
+	}
+
+	&__icon {
+		width: 2rem;
+		margin-bottom: 1rem;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			margin-right: 1rem;
+		}
+	}
+}

@@ -1,0 +1,56 @@
+.cta-button {
+	border: none;
+	padding: 1rem 3rem;
+	border-radius: 8px;
+	background-color: $dark;
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+	width: fit-content;
+	font-size: $body-text-size;
+	cursor: pointer;
+
+	&--mid {
+		background-color: $mid;
+		color: $dark;
+
+		&:hover {
+			color: white;
+			background-color: $dark;
+			box-shadow: 8px 8px 15px 1px rgba(0,0,0,0.09);
+			-webkit-box-shadow: 8px 8px 15px 1px rgba(0,0,0,0.09);
+			-moz-box-shadow: 8px 8px 15px 1px rgba(0,0,0,0.09);
+		}
+	}
+
+	&:hover {
+		background-color: $mid;
+		box-shadow: 8px 8px 15px 1px rgba(0,0,0,0.09);
+		-webkit-box-shadow: 8px 8px 15px 1px rgba(0,0,0,0.09);
+		-moz-box-shadow: 8px 8px 15px 1px rgba(0,0,0,0.09);
+	}
+
+	&__container {
+		width: 100%;
+		@media screen and (min-width: map-deep-get($breakpoints, 'md', 'breakpoint')) {
+			width: fit-content;
+		}
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__file-info {
+		display: flex;
+		margin-top: 0.5rem;
+		p {
+			@extend .small-text;
+			color: $dark;
+			margin: 0 !important;
+			&:first-of-type {
+				margin-right: 1rem !important;
+			}
+		}
+	}
+}

@@ -1,0 +1,110 @@
+.post-card--horizontal {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background: white;
+	margin-bottom: 2em;
+	box-shadow: 1px 5px 18px 5px rgba(0,0,0,0.14);
+
+	&--list {
+		.post-card--horizontal__content {
+			padding: 2em;
+		}
+	}
+
+	@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+		flex-direction: row;
+	}
+
+	&__wrapper {
+		display: flex;
+	}
+
+	&__image {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		flex-basis: 40%;
+		min-height: 10em;
+
+		& > img {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			object-fit: cover;
+		}
+	}
+
+	&__content {
+		flex-basis: 60%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		position: relative;
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			padding-left: 1.2rem;
+			flex-basis: 70%;
+		}
+	}
+
+	&__title {
+		@include body-font();
+		font-weight: 600;
+		margin-bottom: 1rem;
+		line-height: 1.5;
+		@media screen and (min-width: map-deep-get($breakpoints, 'sm', 'breakpoint')) {
+			width: 80%;
+		}
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			margin-top: 1rem;
+			margin-top: inherit;
+			width: 100%;
+		}
+	}
+	&__copy {
+		@include body-font();
+		font-size: 1rem;
+		margin-bottom: 0.5rem;
+		line-height: 1.5;
+	}
+
+	&__link {
+		font-size: 1rem;
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			position: static;
+			margin-top: 0;
+		}
+
+		&:hover {
+			color: $dark;
+		}
+	}
+
+	&__info {
+		display: none;
+		@media screen and (min-width: map-deep-get($breakpoints, 'lg', 'breakpoint')) {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 0.5rem;
+		}
+
+
+		p {
+			@include body-font();
+			font-size: toRem(12);
+			color: $mid-dark;
+			font-weight: 700;
+
+			&:first-of-type {
+				&:after {
+					content: '|';
+					font-size: 1.25rem;
+					font-weight: 200;
+					padding: 0 0.5rem;
+					line-height: 0;
+				}
+			}
+		}
+	}
+
+}

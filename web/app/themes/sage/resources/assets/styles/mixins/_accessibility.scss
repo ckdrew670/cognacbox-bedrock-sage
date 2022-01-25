@@ -1,0 +1,65 @@
+$borderThickness: 4px;
+
+%innerFocus {
+  // @extend this class to add a yellow background and black underline
+  // on focus states for elements that can be tabbed through.
+  // e.g. links, buttons
+
+  // this border style may need to be overwritten but is
+  // present to prevent elements moving when the black
+  // border gets applied when focusing. This class should
+  // be extended after `border: none` if present so that
+  // this does not get overwritten.
+
+  &:focus {
+    background-color: yellow;
+    color: black;
+    box-shadow: 0 $borderThickness black;
+    outline: none;
+  }
+
+}
+
+%outerFocus {
+  // @extend this class to add a yellow highlight and a dark
+  // black border effect on elements that can be tabbed through
+  // but shouldn't have their contents interfered with by having
+  // the yellow background from the %innerFocus class above.
+  // e.g. checkboxes/radio buttons, form fields, buttons that need
+  // to preserve their interior colours, etc.
+  &:focus {
+    box-shadow:
+      0 0 0 3px black,
+      0 0 0 7px yellow;
+    outline: none;
+  }
+
+}
+
+%outerHoverChildren {
+  // @extend this class on the parent of an input when the
+  // parent needs to trigger hover styles on the child.
+  // It will add a large grey box shadow, and if focused too
+  // it will be visually similar to %outerFocus above.
+  // e.g. when hovering a label, the checkbox inside should
+  // receive hover styles.
+
+  &:hover input {
+    box-shadow: 0 0 0 10px #b1b4b6;
+
+    &:focus {
+      box-shadow:
+        0 0 0 3px black,
+        0 0 0 7px yellow,
+        0 0 0 12px #b1b4b6;
+    }
+  }
+
+}
+
+.visually-hidden {
+  opacity: 0;
+  position: absolute;
+  left: -10000px;
+  transform: scale(0);
+}
