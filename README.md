@@ -25,7 +25,7 @@ config.vm.provision "shell", inline: <<-SHELL
 
 * `composer install` and `vagrant up`. 
 
-*NB: You may encounter an error when you provision the box in future re: being unable to find the public folder but this can be ignored**
+*NB: You may encounter an error when you provision the box in future re: being unable to find the public folder but this can be ignored*
 
 * Go to the admin area and run through the WP installation steps
 
@@ -35,4 +35,4 @@ config.vm.provision "shell", inline: <<-SHELL
   * Sage 10 https://docs.roots.io/sage/10.x/installation/#installation-2
   * or add in an existing theme by copying it over
 
-*NB: if you are using an existing theme and want to import assets, copy them over from the existing project (plugins/uploads) and place any DB dump SQL files in the `/web` directory.**
+*NB: if you are using an existing theme and want to import assets, copy them over from the existing project (plugins/uploads) and place any DB dump SQL files in the `/web` directory.*
