@@ -28,7 +28,7 @@ config.vm.provision "shell", inline: <<-SHELL
 
 ### Sage/theme setup
 * You can then set up a fresh Sage theme: 
-        - Sage 9 https://docs.roots.io/sage/9.x/installation/
-        - Sage 10 https://docs.roots.io/sage/10.x/installation/#installation-2
-        - or add in an existing theme
+  * Sage 9 https://docs.roots.io/sage/9.x/installation/
+  * Sage 10 https://docs.roots.io/sage/10.x/installation/#installation-2
+  * or add in an existing theme
 * if you are using an existing theme and want to import assets, copy them over from the existing project (plugins/uploads) and place any DB dump SQL files in the `/web` directory.
