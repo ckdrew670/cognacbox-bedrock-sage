@@ -30,6 +30,10 @@ config.vm.provision "shell", inline: <<-SHELL
 ```
 
 * If you need PHP7 (7.4) rather than 8, there is an earlier version (2.3) of Cognacbox using 7.4. Just replace the Vagrantfile config with this https://github.com/reddingwebpro/cognacbox/blob/v2.3/Vagrantfile . Anything earlier and a Scotchbox may be best.
+* `composer install` and `vagrant up`
 * You can then set up a fresh Sage theme: 
-        Sage 9 https://docs.roots.io/sage/9.x/installation/
-        Sage 10 https://docs.roots.io/sage/10.x/installation/#installation-2
+- Sage 9 https://docs.roots.io/sage/9.x/installation/
+- Sage 10 https://docs.roots.io/sage/10.x/installation/#installation-2
+- or add in an existing theme
+
+* if you are using an existing theme and want to import assets, copy them over from the existing project (plugins/uploads) and place any DB dump SQL files in the `/web` directory.
