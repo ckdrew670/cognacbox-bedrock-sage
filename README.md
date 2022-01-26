@@ -5,7 +5,7 @@
 * Set up a Cognac Box from https://github.com/reddingwebpro/cognacbox 
 * `cd` into project folder
 * `composer create-project roots/bedrock` https://docs.roots.io/bedrock/master/installation/#getting-started 
-* Take files out of bedrock folder
+* Take files out of Bedrock folder and move directly into project folder
 * Update `.env` file with the following (dependant on hostname in your vagrant file for `WP_HOME`)
 
 ```
@@ -28,3 +28,8 @@ config.vm.provision "shell", inline: <<-SHELL
         sudo service apache2 restart
     SHELL
 ```
+
+* If you need PHP7 (7.4) rather than 8, there is an earlier version (2.3) of Cognacbox using 7.4. Just replace the Vagrantfile config with this https://github.com/reddingwebpro/cognacbox/blob/v2.3/Vagrantfile . Anything earlier and a Scotchbox may be best.
+* You can then set up a fresh Sage theme: 
+        Sage 9 https://docs.roots.io/sage/9.x/installation/
+        Sage 10 https://docs.roots.io/sage/10.x/installation/#installation-2
