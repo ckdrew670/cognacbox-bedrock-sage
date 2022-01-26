@@ -4,7 +4,7 @@
 
 ### Cognacbox
 * Set up a Cognac Box from https://github.com/reddingwebpro/cognacbox 
-        - (If you need PHP7 (7.4) rather than 8, there is an earlier version (2.3) of Cognacbox using 7.4. Just replace the Vagrantfile config with this https://github.com/reddingwebpro/cognacbox/blob/v2.3/Vagrantfile . Anything earlier and a Scotchbox may be best.)
+  * (If you need PHP7 (7.4) rather than 8, there is an earlier version (2.3) of Cognacbox using 7.4. Just replace the Vagrantfile config with this https://github.com/reddingwebpro/cognacbox/blob/v2.3/Vagrantfile . Anything earlier and a Scotchbox may be best.)
 * `cd` into the project folder
 
 ### Bedrock setup
